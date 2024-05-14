@@ -10,15 +10,8 @@ function flipCard(e) {
             return cardOne = clickedCard;
         }
         cardTwo = clickedCard;
-        
-        let cardOneImg = cardOne.querySelector("img"),
-        cardTwoImg = cardTwo.querySelector("img");
-        matchCards(cardOneImg, cardTwoImg);
+        console.log(cardOne, cardTwo)
     }
-}
-
-function matchCards(img1, img2) {
-    console.log(img1, img2);
 }
 
 cards.forEach(card => {
