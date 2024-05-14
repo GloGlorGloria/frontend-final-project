@@ -49,7 +49,7 @@ body{
   max-width: 50%;
 }
 
-.cards .card {
+.cards .card{
   cursor: pointer;
   position: relative;
   height: calc(100% /4 - 10px);
@@ -59,8 +59,7 @@ body{
 }
 
 /* this is not working */
-.cards .card .cardClosed,
-.cards .card .cardOpened {
+.cards .card {
   width:100%;
   height:100%;
   position: absolute;
@@ -74,13 +73,13 @@ body{
   transform: rotateY(-180deg);
 }
 
-.card:hover .cardClosed{
+.card.hover .cardClosed{
   transform: rotateY(0);
   /* display: none; */
 }
 
 
-.card:hover .cardOpened{
+.card.hover .cardOpened{
   transform: rotateY(180deg);
   /* display: none; */
 }

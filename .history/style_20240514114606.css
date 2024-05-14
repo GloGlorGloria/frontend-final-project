@@ -60,7 +60,7 @@ body{
 
 /* this is not working */
 .cards .card .cardClosed,
-.cards .card .cardOpened {
+.cards .card .cardOpened{
   width:100%;
   height:100%;
   position: absolute;
