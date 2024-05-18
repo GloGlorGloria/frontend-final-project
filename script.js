@@ -16,7 +16,11 @@ function soundEffectPlay(sound){
 }
 
 function initTimer() {
-  if (timeLeft <= 0) return clearInterval(timer);
+  if (timeLeft <= 0) {
+    clearInterval(timer);
+    soundEffectPlay("wrong2");
+    return;
+  }
   timeLeft--;
   timerNum.innerText = timeLeft;
 }
