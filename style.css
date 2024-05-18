@@ -77,29 +77,37 @@ body {
 
 .card .cardClosed,
 .card .cardOpened {
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
   pointer-events: none;
   user-select: none;
   transition: transform 0.25s linear;
   backface-visibility: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
 }
 
-.card .cardClosed {
-  /* display: none; */
+.card.shake {
+  animation: shake .35s ease-in-out;
 }
 
-.card .cardClosed {
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0eg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.card .cardOpened {
   transform: rotateY(-180deg);
 }
 
-.card:hover .cardClosed {
+.card.flip .cardOpened {
   transform: rotateY(0);
 }
 
-
-.card:hover .cardOpened {
+.card.flip .cardClosed {
   transform: rotateY(180deg);
 }
 
