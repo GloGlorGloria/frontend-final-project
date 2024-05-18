@@ -8,8 +8,22 @@
   font-family: "Poetsen One", sans-serif;
 }
 
+
+h1 {
+  margin: 0px;
+  margin-bottom: 5px;
+  font-size: 50px;
+  color: rgb(36, 54, 29);
+  text-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+}
+
+h1 span { 
+  font-size: 14px;
+}
+
 body {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0;
@@ -165,6 +179,18 @@ li:last-child {
   background: rgb(36, 54, 29);
   box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
 } 
+
+.descriptions {
+  width: 480px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 18px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: rgba(0, 0, 0, .5);
+}
 
 @media screen and (max-device-width: 480px) {
   .cardContainer {

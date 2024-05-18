@@ -3,7 +3,7 @@ timerNum = document.querySelector(".timer b"),
 flipsNum = document.querySelector(".flipsNum b"),
 resetBtn = document.querySelector(".resetBtn");
 
-let maxTime = 30;
+let maxTime = 50;
 let timeLeft = maxTime;
 let flips = 0;
 let matchedCard = 0;
@@ -18,7 +18,7 @@ function soundEffectPlay(sound){
 function initTimer() {
   if (timeLeft <= 0) {
     clearInterval(timer);
-    soundEffectPlay("wrong2");
+    soundEffectPlay("fail");
     return;
   }
   timeLeft--;
