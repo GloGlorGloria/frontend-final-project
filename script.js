@@ -10,7 +10,7 @@ const endGameBtn = document.querySelector(".popup-btn.end-game");
 const scoreDisplay = document.querySelector(".score span");
 const animalsImg = document.querySelector(".animals-img");
 
-let maxTime = 100, timeLeft = maxTime, flips = 0, matchedCard = 0, level = 1, score = 0;
+let maxTime =80, timeLeft = maxTime, flips = 0, matchedCard = 0, level = 1, score = 0;
 let cardOne, cardTwo, timer;
 let playerWon = false, disableTracker = false, isPlaying = false;
 
