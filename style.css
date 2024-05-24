@@ -221,21 +221,44 @@ li:first-child {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 14%;
   padding: 20px;
-  border: 2px solid #000;
+  border: none;
+  border-radius: 16px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  background: white;
+  background-color: rgb(224, 246, 217);
   z-index: 1000;
 }
 
 .popup-content {
+  padding: 10px;
   text-align: center;
 }
 
+.animals-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.animals-img {
+  width: 100%;
+  border-radius: 40px;
+}
+
 .popup-btn {
-  margin: 10px;
+  margin: 10px 0;
   padding: 10px;
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  color: rgb(27, 42, 22);
   cursor: pointer;
+}
+
+.popup-message {
+  font-size: 22px;
+  color: rgb(27, 42, 22);
 }
 
 
@@ -247,9 +270,9 @@ li:first-child {
 
   .card-container {
     min-width: 415px;
-    min-height: 540px;
+    min-height: 510px;
     width: 415px;
-    height: 540px;
+    height: 510px;
     padding-bottom: 15px;
   }
 
@@ -269,7 +292,12 @@ li:first-child {
   }
 
   .rule-container {
-    gap:15px;
+    margin-top: 0;
+    gap: 15px;
+  }
+
+  .rule-container p {
+    margin-bottom: 0;
   }
 
   .timer,
@@ -291,6 +319,10 @@ li:first-child {
   .alert-message-container {
     margin: 0 25px;
     line-height: 10px;
-    font-size: 18px;
+    font-size: 14px;
+  }
+
+  .popup {
+    width: 40%;
   }
 }

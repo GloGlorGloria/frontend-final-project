@@ -8,14 +8,19 @@ const popupMessage = document.querySelector(".popup-message");
 const continueBtn = document.querySelector(".popup-btn.continue");
 const endGameBtn = document.querySelector(".popup-btn.end-game");
 const scoreDisplay = document.querySelector(".score span");
+const animalsImg = document.querySelector(".animals-img");
 
 let maxTime = 60, timeLeft = maxTime, flips = 0, matchedCard = 0, level = 1, score = 0;
 let cardOne, cardTwo, timer;
 let playerWon = false, disableTracker = false, isPlaying = false;
 
 function soundEffectPlay(sound) {
-  var audio = new Audio(`sounds/${sound}.mp3`);
-  audio.play();
+  try {
+    var audio = new Audio(`sounds/${sound}.mp3`);
+    audio.play();
+  } catch (error) {
+    console.error(`Error playing sound ${sound}: `, error);
+  }
 }
 
 function initTimer() {
@@ -50,15 +55,27 @@ function shuffleCard() {
   });
 }
 
+function messageRandomImg(excludeImg) {
+  let randomIndex;
+  do {
+    randomIndex = Math.floor(Math.random() * 8) + 1;
+  } while (`images/image-0${randomIndex}.png` === excludeImg);
+  previousPopupImage = `images/image-0${randomIndex}.png`;
+  return previousPopupImage;
+}
+
 function alertMessage() {
   if (level < 5) {
+    animalsImg.src = messageRandomImg(animalsImg.src);
     popupMessage.textContent = `You won! Proceed to Level ${level + 1}?`;
     popup.classList.remove("hidden");
     playerWon = true;
   } else {
+    animalsImg.src = messageRandomImg(animalsImg.src);
     popupMessage.textContent = "You are a super player!!";
-    soundEffectPlay("super_win");
+    soundEffectPlay("super");
     popup.classList.remove("hidden");
+    continueBtn.style.display = "none";
   }
 }
 
@@ -72,7 +89,7 @@ function nextLevel() {
 }
 
 function resetGame() {
-  maxTime = 100;
+  maxTime = 60;
   timeLeft = maxTime;
   flips = 0;
   matchedCard = 0;
@@ -143,21 +160,13 @@ function matchCards(img1, img2) {
 shuffleCard();
 cards.forEach(card => card.addEventListener("click", flipCard));
 
-continueBtn.addEventListener("click", () => {
-  popup.classList.add("hidden");
-  nextLevel();
-});
-
 endGameBtn.addEventListener("click", () => {
   popup.classList.add("hidden");
   resetGame();
 });
 
 continueBtn.addEventListener("click", () => {
-  if (level < 5) {
-    popup.classList.add("hidden");
-    nextLevel();
-  } else {
-    resetGame();
-  }
+  popup.classList.add("hidden");
+  (level <= 5) ? nextLevel() : resetGame();
 });
+
