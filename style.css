@@ -36,21 +36,21 @@ body {
   background-size: cover;
 }
 
-.cardImage {
+.card-img {
   width: 100px;
   height: 100px;
 }
 
-.cardClosedImage {
+.card-closed-img {
   width: 100px;
   height: 100px;
 }
 
-.cardContainer {
+.card-container {
   width: 500px;
   height: 580px;
   min-width: 500px;
-  min-height: 580px;
+  min-height: 620px;
   margin: 0;
   padding: 0;
   border-radius: 15px;
@@ -59,8 +59,8 @@ body {
 
 .cards,
 .card,
-.cardClosed,
-.cardOpened {
+.card-closed,
+.card-opened {
   display: flex;
   width: 100%;
   height: 100%;
@@ -76,7 +76,7 @@ body {
   margin: 0;
 }
 
-.card .cardClosed {
+.card .card-closed {
   max-width: 50%;
 }
 
@@ -93,8 +93,8 @@ body {
   cursor: pointer;
 }
 
-.card .cardClosed,
-.card .cardOpened {
+.card .card-closed,
+.card .card-opened {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -117,23 +117,27 @@ body {
   100% { transform: rotate(0deg); }
 }
 
-.card .cardOpened {
+.card .card-opened {
   transform: rotateY(-180deg);
 }
 
-.card.flip .cardOpened {
+.card.flip .card-opened {
   transform: rotateY(0);
 }
 
-.card.flip .cardClosed {
+.card.flip .card-closed {
   transform: rotateY(180deg);
 }
 
-li:last-child {
+li {
   list-style: none;
 }
 
-.ruleContainer {
+li:first-child {
+  min-width: 100%;
+}
+
+.rule-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -143,7 +147,8 @@ li:last-child {
 }
 
 .timer,
-.flipsNum {
+.flips-num, 
+.level {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,13 +159,18 @@ li:last-child {
   color: rgb(27, 42, 22);
 }
 
+.level {
+  border: none;
+}
+
 .timer > span,
-.flipsNum > span {
+.flips-num > span, 
+.level > span{
   display: block;
   padding-left: 10px;
 }
 
-.resetBtn {
+.reset-btn {
   width: 150px;
   border: 0;
   border-radius: 6px;
@@ -171,7 +181,7 @@ li:last-child {
   cursor: pointer;
 }
 
-.resetBtn:hover { 
+.reset-btn:hover { 
   padding: 5px 10px;
   border: none;
   font-size: 18px;
@@ -182,22 +192,64 @@ li:last-child {
 
 .descriptions {
   width: 480px;
-  padding: 10px;
+  padding: 6px;
   border-radius: 10px;
   text-align: center;
-  line-height: 18px;
-  font-size: 14px;
+  line-height: 14px;
+  font-size: 10px;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   background-color: rgba(0, 0, 0, .5);
 }
 
+.alert-message-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0 40px;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+
+.hidden {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 2px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: white;
+  z-index: 1000;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup-btn {
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
 @media screen and (max-device-width: 480px) {
-  .cardContainer {
+  h1 {
+    margin: 0 15px 15px;
+    font-size: 45px;
+  }
+
+  .card-container {
     min-width: 415px;
-    min-height: 510px;
+    min-height: 540px;
     width: 415px;
-    height: 510px;
+    height: 540px;
     padding-bottom: 15px;
   }
 
@@ -206,26 +258,39 @@ li:last-child {
     height: 85px;
   }
 
-  .card .cardClosed {
+  .card .card-closed {
     max-width: 100%;
   }
 
-  .cardClosedImage,
-  .cardImage {
+  .card-closed-img,
+  .card-img {
     width: 100%;
     height: 100%;
   }
 
-  .ruleContainer {
+  .rule-container {
     gap:15px;
   }
 
   .timer,
-  .flipsNum {
+  .flips-num {
     font-size: 20px;
   }
 
-  .resetBtn {
+  .reset-btn {
     width: 130px;
+  }
+
+  .descriptions {
+    width: 403px;
+    padding: 10px 0;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .alert-message-container {
+    margin: 0 25px;
+    line-height: 10px;
+    font-size: 18px;
   }
 }
