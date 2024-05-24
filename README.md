@@ -4,13 +4,12 @@ FOREST MATCH (EST. 1843) is a fun and engaging memory card game built using HTML
 
 ## Game Features
 
-- **16 Cards:** The game board consists of 16 cards, each with a unique animal on the back.
-- **Memory Challenge:** Players have to flip the cards to find and match pairs of animals.
+- **Cards:** The game board consists of 16 cards, each with a unique animal on the back.
+- **Memory Challenge:** Players have to flip the cards to find and match pairs of animals, the flip count is also shown for reference.
 - **Timer:** A countdown timer adds excitement and challenge to the game.
 - **Win/Lose Messages:** Audio feedback is provided for both winning and losing scenarios, as well as for successfully matched or unmatched pairs.
-- **Flip** It also counts the number of flips the player makes.
-- **Level Up** There are in total 5 levels in the game. The time limit decreases by 10 seconds with each level to increase the difficulty.
-- **Cards Shuffle** The cards shuffle randomly every time a new game or new level starts.
+- **Level Up:** There are in total 5 levels in the game. The time limit decreases by 10 seconds with each level to increase the difficulty.
+- **Cards Shuffle:** The cards shuffle randomly every time a new game or new level starts.
 
 ## How to Play
 
