@@ -26,7 +26,9 @@ FOREST MATCH (EST. 1843) is a fun and engaging memory card game built using HTML
 1. Clone the repository:
    ```sh
    git clone https://github.com/GloGlorGloria/frontend-final-project.git
-
+2. Open with link:
+   forest-match-final-project.vercel.app
+   
 ## Browser Compatibility
 FOREST MATCH (EST. 1843) works on all modern HTML5-supporting web browsers, including but not limited to:
 - Google Chrome
